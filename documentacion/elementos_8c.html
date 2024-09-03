@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STOCK MANAGEMENT TOOL 1.0: Referencia del Archivo elementos.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">STOCK MANAGEMENT TOOL 1.0
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo elementos.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;stdio.h&quot;</code><br />
+<code>#include &quot;stdlib.h&quot;</code><br />
+<code>#include &quot;time.h&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="elementos_8h_source.html">elementos.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para elementos.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="elementos_8c__incl.png" border="0" usemap="#aelementos_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:af18a598591bbc42270ba47014772da99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#af18a598591bbc42270ba47014772da99">inicializarArchivo</a> ()</td></tr>
+<tr class="memdesc:af18a598591bbc42270ba47014772da99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si el archivo no existe, lo crea con la totalidad de los registros para acceso directo.  <a href="elementos_8c.html#af18a598591bbc42270ba47014772da99">Más...</a><br /></td></tr>
+<tr class="separator:af18a598591bbc42270ba47014772da99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14c005a92f2548194309ab811d84604"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#af14c005a92f2548194309ab811d84604">cargarVector</a> (<a class="el" href="structElemento.html">Elemento</a> elem[])</td></tr>
+<tr class="memdesc:af14c005a92f2548194309ab811d84604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vuelca la base de datos al vector pasado por referencia.  <a href="elementos_8c.html#af14c005a92f2548194309ab811d84604">Más...</a><br /></td></tr>
+<tr class="separator:af14c005a92f2548194309ab811d84604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa400e59fa2eed958c2b12e344adc1d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#aaa400e59fa2eed958c2b12e344adc1d6">guardarElemento</a> (<a class="el" href="structElemento.html">Elemento</a> *elem)</td></tr>
+<tr class="memdesc:aaa400e59fa2eed958c2b12e344adc1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda el <a class="el" href="structElemento.html">Elemento</a> elem en la base de datos.  <a href="elementos_8c.html#aaa400e59fa2eed958c2b12e344adc1d6">Más...</a><br /></td></tr>
+<tr class="separator:aaa400e59fa2eed958c2b12e344adc1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b96fa3a6bf5f0274693c4ec3b32d2f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#a0b96fa3a6bf5f0274693c4ec3b32d2f3">leerElemento</a> (int id, <a class="el" href="structElemento.html">Elemento</a> *aux)</td></tr>
+<tr class="memdesc:a0b96fa3a6bf5f0274693c4ec3b32d2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recibe un ID, y un puntero de <a class="el" href="structElemento.html">Elemento</a>, busca el id en la base y lo devuelve en el puntero aux, pendiente manejo de errores.  <a href="elementos_8c.html#a0b96fa3a6bf5f0274693c4ec3b32d2f3">Más...</a><br /></td></tr>
+<tr class="separator:a0b96fa3a6bf5f0274693c4ec3b32d2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc64b33cd5840294779a1dc52ecc9c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#a2bc64b33cd5840294779a1dc52ecc9c3">borrarElemento</a> (int id)</td></tr>
+<tr class="memdesc:a2bc64b33cd5840294779a1dc52ecc9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borra un elemento de la base de datos, pendiente manejo de errores.  <a href="elementos_8c.html#a2bc64b33cd5840294779a1dc52ecc9c3">Más...</a><br /></td></tr>
+<tr class="separator:a2bc64b33cd5840294779a1dc52ecc9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2656221bc372cb8f64176944871bdccd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#a2656221bc372cb8f64176944871bdccd">validaId</a> (int id)</td></tr>
+<tr class="memdesc:a2656221bc372cb8f64176944871bdccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida si una ID existe en la base o no, recibe una id por parametro, y devuelve: <br  />
+  <a href="elementos_8c.html#a2656221bc372cb8f64176944871bdccd">Más...</a><br /></td></tr>
+<tr class="separator:a2656221bc372cb8f64176944871bdccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1cf5fd08cf1d13402d629ce14c93327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#ae1cf5fd08cf1d13402d629ce14c93327">timer</a> (char mode, char *tiempo)</td></tr>
+<tr class="memdesc:ae1cf5fd08cf1d13402d629ce14c93327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera Strings con la fecha/hora actual.  <a href="elementos_8c.html#ae1cf5fd08cf1d13402d629ce14c93327">Más...</a><br /></td></tr>
+<tr class="separator:ae1cf5fd08cf1d13402d629ce14c93327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32ec2bb64b320f79987b62fa27ad89b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#ad32ec2bb64b320f79987b62fa27ad89b">logUpdate</a> (<a class="el" href="structElemento.html">Elemento</a> *elem, <a class="el" href="elementos_8h.html#a9d4630b1e0c310d9b8c562abd8114c49">Estado</a> viejoEstado)</td></tr>
+<tr class="memdesc:ad32ec2bb64b320f79987b62fa27ad89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log de actualizaciones de estado para casos de auditoria//Log de actualizaciones de estado.  <a href="elementos_8c.html#ad32ec2bb64b320f79987b62fa27ad89b">Más...</a><br /></td></tr>
+<tr class="separator:ad32ec2bb64b320f79987b62fa27ad89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2fbe11090fa707e193f496c6b35bf24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#af2fbe11090fa707e193f496c6b35bf24">generaCopiaCSV</a> ()</td></tr>
+<tr class="memdesc:af2fbe11090fa707e193f496c6b35bf24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un archivo CSV, copia de la base de datos actual.  <a href="elementos_8c.html#af2fbe11090fa707e193f496c6b35bf24">Más...</a><br /></td></tr>
+<tr class="separator:af2fbe11090fa707e193f496c6b35bf24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf97c076e566e7a614aa3bcd8115f019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#adf97c076e566e7a614aa3bcd8115f019">generarInformePendientes</a> ()</td></tr>
+<tr class="memdesc:adf97c076e566e7a614aa3bcd8115f019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un Informe con los elementos pendientes de reparacion.  <a href="elementos_8c.html#adf97c076e566e7a614aa3bcd8115f019">Más...</a><br /></td></tr>
+<tr class="separator:adf97c076e566e7a614aa3bcd8115f019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa627f5c292c2805ce98360b225760f27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#aa627f5c292c2805ce98360b225760f27">menuPrincipal</a> ()</td></tr>
+<tr class="memdesc:aa627f5c292c2805ce98360b225760f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">INTERFAZ DEL USUARIO.  <a href="elementos_8c.html#aa627f5c292c2805ce98360b225760f27">Más...</a><br /></td></tr>
+<tr class="separator:aa627f5c292c2805ce98360b225760f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac125c1f1acb65857aec30cd541784c54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#ac125c1f1acb65857aec30cd541784c54">menuLeer</a> ()</td></tr>
+<tr class="separator:ac125c1f1acb65857aec30cd541784c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1749f933b9e297865ec5f36faa3726e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#ae1749f933b9e297865ec5f36faa3726e">menuAgregar</a> ()</td></tr>
+<tr class="separator:ae1749f933b9e297865ec5f36faa3726e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef822ea7997f72bce55fe14255a46c2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#aef822ea7997f72bce55fe14255a46c2f">menuBorrar</a> ()</td></tr>
+<tr class="separator:aef822ea7997f72bce55fe14255a46c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66e7ab0f1710ed4e8401f9310bbcfd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#af66e7ab0f1710ed4e8401f9310bbcfd9">menuEditar</a> ()</td></tr>
+<tr class="separator:af66e7ab0f1710ed4e8401f9310bbcfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f53cedd2d2fbd269acb50d6ccd9434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#a30f53cedd2d2fbd269acb50d6ccd9434">menuPendientes</a> ()</td></tr>
+<tr class="separator:a30f53cedd2d2fbd269acb50d6ccd9434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3e78ef13bb189b0cd066c92a42e0b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="elementos_8c.html#aab3e78ef13bb189b0cd066c92a42e0b8">actualizarEstado</a> ()</td></tr>
+<tr class="separator:aab3e78ef13bb189b0cd066c92a42e0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="aab3e78ef13bb189b0cd066c92a42e0b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3e78ef13bb189b0cd066c92a42e0b8">&#9670;&nbsp;</a></span>actualizarEstado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void actualizarEstado </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="image">
+<img src="menuActualizoEstado.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="a2bc64b33cd5840294779a1dc52ecc9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc64b33cd5840294779a1dc52ecc9c3">&#9670;&nbsp;</a></span>borrarElemento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void borrarElemento </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Borra un elemento de la base de datos, pendiente manejo de errores. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>id : ID del elemento a borrar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af14c005a92f2548194309ab811d84604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14c005a92f2548194309ab811d84604">&#9670;&nbsp;</a></span>cargarVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cargarVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structElemento.html">Elemento</a>&#160;</td>
+          <td class="paramname"><em>elem</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vuelca la base de datos al vector pasado por referencia. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structElemento.html">Elemento</a></td><td>elem[] : Puntero del vector a cargar con los elementos del archivo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Int : En caso satisfactorio, cantidad de elementos cargados, devuelve -1 en caso de error. </dd></dl>
+
+</div>
+</div>
+<a id="af2fbe11090fa707e193f496c6b35bf24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2fbe11090fa707e193f496c6b35bf24">&#9670;&nbsp;</a></span>generaCopiaCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generaCopiaCSV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera un archivo CSV, copia de la base de datos actual. </p>
+<div class="image">
+<img src="backupCSV.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="adf97c076e566e7a614aa3bcd8115f019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf97c076e566e7a614aa3bcd8115f019">&#9670;&nbsp;</a></span>generarInformePendientes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generarInformePendientes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera un Informe con los elementos pendientes de reparacion. </p>
+<div class="image">
+<img src="informePendientes.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="aaa400e59fa2eed958c2b12e344adc1d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa400e59fa2eed958c2b12e344adc1d6">&#9670;&nbsp;</a></span>guardarElemento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int guardarElemento </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structElemento.html">Elemento</a> *&#160;</td>
+          <td class="paramname"><em>elem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda el <a class="el" href="structElemento.html">Elemento</a> elem en la base de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structElemento.html">Elemento</a></td><td>elem: Recibe el elemento a guardar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Int : Devuelve 0 en caso de error, 1 en caso de exito. </dd></dl>
+
+</div>
+</div>
+<a id="af18a598591bbc42270ba47014772da99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18a598591bbc42270ba47014772da99">&#9670;&nbsp;</a></span>inicializarArchivo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void inicializarArchivo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Si el archivo no existe, lo crea con la totalidad de los registros para acceso directo. </p>
+
+</div>
+</div>
+<a id="a0b96fa3a6bf5f0274693c4ec3b32d2f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b96fa3a6bf5f0274693c4ec3b32d2f3">&#9670;&nbsp;</a></span>leerElemento()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void leerElemento </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structElemento.html">Elemento</a> *&#160;</td>
+          <td class="paramname"><em>aux</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recibe un ID, y un puntero de <a class="el" href="structElemento.html">Elemento</a>, busca el id en la base y lo devuelve en el puntero aux, pendiente manejo de errores. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Int</td><td>id : ID del elemento a buscar, <a class="el" href="structElemento.html">Elemento</a> * aux: Puntero del espacio de memoria para el elemento. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad32ec2bb64b320f79987b62fa27ad89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32ec2bb64b320f79987b62fa27ad89b">&#9670;&nbsp;</a></span>logUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structElemento.html">Elemento</a> *&#160;</td>
+          <td class="paramname"><em>elem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="elementos_8h.html#a9d4630b1e0c310d9b8c562abd8114c49">Estado</a>&#160;</td>
+          <td class="paramname"><em>viejoEstado</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log de actualizaciones de estado para casos de auditoria//Log de actualizaciones de estado. </p>
+<div class="image">
+<img src="logActualizaciones.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="ae1749f933b9e297865ec5f36faa3726e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1749f933b9e297865ec5f36faa3726e">&#9670;&nbsp;</a></span>menuAgregar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menuAgregar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="image">
+<img src="menuAgregar.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="aef822ea7997f72bce55fe14255a46c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef822ea7997f72bce55fe14255a46c2f">&#9670;&nbsp;</a></span>menuBorrar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menuBorrar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af66e7ab0f1710ed4e8401f9310bbcfd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af66e7ab0f1710ed4e8401f9310bbcfd9">&#9670;&nbsp;</a></span>menuEditar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menuEditar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac125c1f1acb65857aec30cd541784c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac125c1f1acb65857aec30cd541784c54">&#9670;&nbsp;</a></span>menuLeer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menuLeer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="image">
+<img src="menuBuscar.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="a30f53cedd2d2fbd269acb50d6ccd9434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30f53cedd2d2fbd269acb50d6ccd9434">&#9670;&nbsp;</a></span>menuPendientes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menuPendientes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="image">
+<img src="menuListarPendientes.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="aa627f5c292c2805ce98360b225760f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa627f5c292c2805ce98360b225760f27">&#9670;&nbsp;</a></span>menuPrincipal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int menuPrincipal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INTERFAZ DEL USUARIO. </p>
+<div class="image">
+<img src="menuPrincipal.png" alt=""/>
+</div>
+ 
+</div>
+</div>
+<a id="ae1cf5fd08cf1d13402d629ce14c93327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1cf5fd08cf1d13402d629ce14c93327">&#9670;&nbsp;</a></span>timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>tiempo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera Strings con la fecha/hora actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>* tiempo : puntero string con el espacio de memoria, char * mode : Opcion deseada: 'h':hora, 'd':dia, 'b': ambas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2656221bc372cb8f64176944871bdccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2656221bc372cb8f64176944871bdccd">&#9670;&nbsp;</a></span>validaId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int validaId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valida si una ID existe en la base o no, recibe una id por parametro, y devuelve: <br  />
+ </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Int</td><td>id : ID a validar si existe o no. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Int : -1: Error de lectura, 0: ID existente 1: ID válida. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
