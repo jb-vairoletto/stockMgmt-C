@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STOCK MANAGEMENT TOOL 1.0: Fichero Fuente includes/baseUtils.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">STOCK MANAGEMENT TOOL 1.0
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">baseUtils.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="baseUtils_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BASEUTILS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BASEUTILS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="baseUtils_8h.html#a30dcc147f84dcf3dc362fb25a681b674">    4</a></span>&#160;<span class="preprocessor">#define MAX_ELEMENTOS 10000</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="baseUtils_8h.html#a262634d0883f7b444c8f6e3868d18665">    5</a></span>&#160;<span class="preprocessor">#define ARCHIVO &quot;database.dat&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="baseUtils_8h.html#a159ca84d25a5487d8e81e4438725df19">    6</a></span>&#160;<span class="preprocessor">#define LOG &quot;logUpdates.txt&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*Definicion de tipos de datos y prototipos de funciones*/</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49">   10</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ac9756046863ed17d681d9eaa477352a4">   11</a></span>&#160;    <a class="code" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ac9756046863ed17d681d9eaa477352a4">OPERATIVO</a>, <a class="code" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ae12c3c5c96505e001b5a3e20e7289f99">REPUESTO</a>, <a class="code" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ab165f5a750afe7ac8b42e85d43d5e914">EN_REPARACION</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ab165f5a750afe7ac8b42e85d43d5e914">   12</a></span>&#160;} <a class="code" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49">Estado</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structElemento.html">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structElemento.html#a33f93c4284788c2ebe0308b9ebe5b099">   15</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structElemento.html#a33f93c4284788c2ebe0308b9ebe5b099">id</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structElemento.html#a4030f40a45ea5a13fe127ab59ffd983a">   16</a></span>&#160;    <span class="keywordtype">char</span> nombre[30];</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structElemento.html#a77b442e39bd8368d4a334fb5ed5ab58b">   17</a></span>&#160;    <a class="code" href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49">Estado</a> <a class="code" href="structElemento.html#a77b442e39bd8368d4a334fb5ed5ab58b">estado</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structElemento.html#a14ba31a9d646e74ce919b1d2c3baf6b5">   18</a></span>&#160;    <span class="keywordtype">char</span> observaciones[50];</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <a class="code" href="structElemento.html">Elemento</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/* UTILS */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="baseUtils_8h.html#af18a598591bbc42270ba47014772da99">inicializarArchivo</a> ();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> <a class="code" href="baseUtils_8h.html#aefaef7cbeaae4d2e9ea29d65e7c4ac7c">cargarVector</a> (<a class="code" href="structElemento.html">Elemento</a>[]);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="baseUtils_8h.html#ac13faa351dd6e32654b5f92694e7934b">validaId</a> (<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="baseUtils_8h.html#a2118460faf09fc168bcad8537fef882c">timer</a>(<span class="keywordtype">char</span>, <span class="keywordtype">char</span> *);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="abaseUtils_8h_html_a2118460faf09fc168bcad8537fef882c"><div class="ttname"><a href="baseUtils_8h.html#a2118460faf09fc168bcad8537fef882c">timer</a></div><div class="ttdeci">void timer(char, char *)</div><div class="ttdoc">Genera Strings con la fecha/hora actual.</div><div class="ttdef"><b>Definition:</b> libBaseUtils.c:73</div></div>
+<div class="ttc" id="abaseUtils_8h_html_a9d4630b1e0c310d9b8c562abd8114c49"><div class="ttname"><a href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49">Estado</a></div><div class="ttdeci">Estado</div><div class="ttdef"><b>Definition:</b> baseUtils.h:10</div></div>
+<div class="ttc" id="abaseUtils_8h_html_a9d4630b1e0c310d9b8c562abd8114c49ab165f5a750afe7ac8b42e85d43d5e914"><div class="ttname"><a href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ab165f5a750afe7ac8b42e85d43d5e914">EN_REPARACION</a></div><div class="ttdeci">@ EN_REPARACION</div><div class="ttdef"><b>Definition:</b> baseUtils.h:11</div></div>
+<div class="ttc" id="abaseUtils_8h_html_a9d4630b1e0c310d9b8c562abd8114c49ac9756046863ed17d681d9eaa477352a4"><div class="ttname"><a href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ac9756046863ed17d681d9eaa477352a4">OPERATIVO</a></div><div class="ttdeci">@ OPERATIVO</div><div class="ttdef"><b>Definition:</b> baseUtils.h:11</div></div>
+<div class="ttc" id="abaseUtils_8h_html_a9d4630b1e0c310d9b8c562abd8114c49ae12c3c5c96505e001b5a3e20e7289f99"><div class="ttname"><a href="baseUtils_8h.html#a9d4630b1e0c310d9b8c562abd8114c49ae12c3c5c96505e001b5a3e20e7289f99">REPUESTO</a></div><div class="ttdeci">@ REPUESTO</div><div class="ttdef"><b>Definition:</b> baseUtils.h:11</div></div>
+<div class="ttc" id="abaseUtils_8h_html_ac13faa351dd6e32654b5f92694e7934b"><div class="ttname"><a href="baseUtils_8h.html#ac13faa351dd6e32654b5f92694e7934b">validaId</a></div><div class="ttdeci">int validaId(int)</div><div class="ttdoc">Valida si una ID existe en la base o no, recibe una id por parametro, y devuelve:</div><div class="ttdef"><b>Definition:</b> libBaseUtils.c:51</div></div>
+<div class="ttc" id="abaseUtils_8h_html_aefaef7cbeaae4d2e9ea29d65e7c4ac7c"><div class="ttname"><a href="baseUtils_8h.html#aefaef7cbeaae4d2e9ea29d65e7c4ac7c">cargarVector</a></div><div class="ttdeci">int cargarVector(Elemento[])</div><div class="ttdoc">Vuelca la base de datos al vector pasado por referencia.</div><div class="ttdef"><b>Definition:</b> libBaseUtils.c:28</div></div>
+<div class="ttc" id="abaseUtils_8h_html_af18a598591bbc42270ba47014772da99"><div class="ttname"><a href="baseUtils_8h.html#af18a598591bbc42270ba47014772da99">inicializarArchivo</a></div><div class="ttdeci">void inicializarArchivo()</div><div class="ttdoc">Si el archivo no existe, lo crea con la totalidad de los registros para acceso directo.</div><div class="ttdef"><b>Definition:</b> libBaseUtils.c:11</div></div>
+<div class="ttc" id="astructElemento_html"><div class="ttname"><a href="structElemento.html">Elemento</a></div><div class="ttdef"><b>Definition:</b> baseUtils.h:14</div></div>
+<div class="ttc" id="astructElemento_html_a33f93c4284788c2ebe0308b9ebe5b099"><div class="ttname"><a href="structElemento.html#a33f93c4284788c2ebe0308b9ebe5b099">Elemento::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> baseUtils.h:15</div></div>
+<div class="ttc" id="astructElemento_html_a77b442e39bd8368d4a334fb5ed5ab58b"><div class="ttname"><a href="structElemento.html#a77b442e39bd8368d4a334fb5ed5ab58b">Elemento::estado</a></div><div class="ttdeci">Estado estado</div><div class="ttdef"><b>Definition:</b> baseUtils.h:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

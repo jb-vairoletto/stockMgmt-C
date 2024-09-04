@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STOCK MANAGEMENT TOOL 1.0: Gestión de Stock de Materiales</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">STOCK MANAGEMENT TOOL 1.0
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Gestión de Stock de Materiales </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> Esta aplicación en C permite gestionar un inventario de materiales, registrar su estado (operativo, en reparación, repuesto), y generar informes y copias de seguridad. Es ideal para un sistema de mantenimiento que necesita seguimiento detallado de los elementos.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Funcionalidades</h1>
+<ol type="1">
+<li><b>Agregar Materiales:</b><ul>
+<li>Registra nuevos materiales con un ID único, nombre, estado y observaciones.</li>
+</ul>
+</li>
+<li><b>Eliminar Materiales:</b><ul>
+<li>Permite borrar materiales del sistema.</li>
+</ul>
+</li>
+<li><b>Modificar Estado de Materiales:</b><ul>
+<li>Actualiza el estado de los materiales (operativo, en reparación, repuesto) y añade observaciones.</li>
+</ul>
+</li>
+<li><b>Generar Informe de Materiales en Reparación:</b><ul>
+<li>Crea un archivo de texto con los detalles de los materiales en reparación, útil para su uso en correos electrónicos.</li>
+</ul>
+</li>
+<li><b>Búsqueda de Materiales por ID:</b><ul>
+<li>Permite consultar información de un material específico ingresando su ID.</li>
+</ul>
+</li>
+<li><b>Generación de Copia de Seguridad en CSV:</b><ul>
+<li>Exporta los datos a un archivo CSV para respaldo o análisis externo.</li>
+</ul>
+</li>
+<li><b>Log de Actualizaciones con Fecha y Hora:</b><ul>
+<li>Registra todas las modificaciones realizadas sobre los materiales para auditorías.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Estructura del Proyecto</h1>
+<p>El proyecto está organizado en tres archivos principales:</p>
+<ul>
+<li><code><a class="el" href="main_8c.html">main.c</a></code>: Contiene el punto de entrada de la aplicación y maneja la interacción con el usuario.</li>
+<li><code>elementos.c</code>: Implementa las funciones relacionadas con la gestión de los materiales y el archivo de base de datos.</li>
+<li><code>elementos.h</code>: Define las estructuras de datos, constantes y prototipos de funciones.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Compilación y Ejecución</h1>
+<p>Puedes compilar el proyecto usando GCC y ejecutar el programa desde la terminal. Aquí hay un ejemplo de cómo hacerlo:</p>
+<p>```bash gcc <a class="el" href="main_8c.html">main.c</a> elementos.c -o gestion_stock ./gestion_stock </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
