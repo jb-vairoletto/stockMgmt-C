@@ -13,9 +13,9 @@ typedef enum {
 
 typedef struct {
     int id;
-    char nombre[30];
+    char nombre[31];
     Estado estado;
-    char observaciones[50];
+    char observaciones[51];
 } Elemento;
 
 /* UTILS */
@@ -23,5 +23,6 @@ void inicializarArchivo ();
 int cargarVector (Elemento[]);
 int validaId (int);
 void timer(char, char *);
+int miscanf(char, ...);
 
 #endif

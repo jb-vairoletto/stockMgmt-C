@@ -26,12 +26,13 @@ int guardarElemento (Elemento * elem) {
     return 0;  
 }
 
-/** \brief Recibe un ID, y un puntero de Elemento, busca el id en la base y lo devuelve en el puntero aux, pendiente manejo de errores. 
+/** \brief Recibe un ID, y un puntero de Elemento, busca el id en la base y lo devuelve en el puntero aux. 
  * \param Int id : ID del elemento a buscar, Elemento * aux: Puntero del espacio de memoria para el elemento. 
 */
 void leerElemento (int id, Elemento * aux){
 
     FILE *filePointer;
+    
 
     if ((filePointer = fopen(ARCHIVO, "r+")) == NULL){
         printf ("Error al leer archivo");
@@ -42,13 +43,14 @@ void leerElemento (int id, Elemento * aux){
     fclose(filePointer);
 }
 
-/** \brief Borra un elemento de la base de datos, pendiente manejo de errores. 
+/** \brief Borra un elemento de la base de datos. 
  * \param int id : ID del elemento a borrar.
 */
 void borrarElemento(int id){
     
     FILE *filePointer;
-    Elemento elem = {0,"",0,""};
+    Elemento * elem = (Elemento *) malloc (sizeof(Elemento));
+    elem = (Elemento *) memset (elem, 0, sizeof(Elemento));
 
     if ((filePointer = fopen(ARCHIVO, "r+")) == NULL) {
         printf("Error al leer archivo");
@@ -56,7 +58,7 @@ void borrarElemento(int id){
     }
 
     fseek(filePointer,(sizeof(Elemento)*(id-1)), SEEK_SET);
-    fwrite(&elem, sizeof(Elemento), 1, filePointer);            //Sobreescribe el Elemento id con uno con todos los miembros seteados en 0
+    fwrite(elem, sizeof(Elemento), 1, filePointer);            //Sobreescribe el Elemento id con uno con todos los miembros seteados en 0
 
     fclose(filePointer);   
 }
