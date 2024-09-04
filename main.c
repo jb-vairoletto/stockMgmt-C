@@ -1,11 +1,13 @@
 #include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-#include "elementos.h"
+
+#include "includes/baseUtils.h"
+#include "includes/gui.h"
+#include "includes/persist.h"
 
 int main(int argc, char const *argv[])
 {   
     inicializarArchivo();
+    
 
     char flag = 'v';
     do {
