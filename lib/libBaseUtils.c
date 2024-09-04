@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #include "time.h"
 #include "string.h"
+#include "stdarg.h"
 
 #include "../includes/baseUtils.h"
 char * ESTADOS[] = {"OPERATIVO", "REPUESTO", "EN REPARACION"};
@@ -68,7 +69,8 @@ int validaId(int id){
 }
 
 /** \brief Genera Strings con la fecha/hora actual. 
- * \param char * tiempo : puntero string con el espacio de memoria, char * mode : Opcion deseada: 'h':hora, 'd':dia, 'b': ambas.
+ * \param tiempo : puntero string con el espacio de memoria, 
+ * \param mode : Opcion deseada: 'h':hora, 'd':dia, 'b': ambas.
 */
 void timer(char mode, char * tiempo){
    
@@ -88,4 +90,62 @@ void timer(char mode, char * tiempo){
         snprintf(tiempo, 22*sizeof(char), "%d-%d-%d__%d_%d_%d", timeinfo->tm_mday,timeinfo->tm_mon + 1, timeinfo->tm_year +1900, timeinfo->tm_hour,timeinfo->tm_min, timeinfo->tm_sec);
    }
 
+}
+
+
+/** \brief Funcion de ingreso de datos string(permite espacios en blanco) y enteros. 
+ * \param char * tipo : 'c' : para el ingreso de string, 'i': para el ingreso de enteros.
+ * \param void * segun modo elegido puntero correspondiente
+ * \param limite int: en caso de string : limite de caracteres
+ * \return int: 0: Error, !=0: Cantidad de caracteres o digitos.
+*/
+int miscanf(char tipo, ...){
+		va_list ap;
+		va_start(ap, tipo);
+		char caracter = 0;
+		
+		switch(tipo){
+			case 'c':
+				char * ptr = va_arg(ap, char *);
+				int limite = va_arg(ap, int);
+				
+				int contador= 0;
+				
+				while ((caracter = getchar ()) != '\n' &&  contador < limite){
+					*(ptr+contador) = caracter;
+					contador++;
+				}
+				if (contador == limite) {
+					while( (caracter = getchar ()) != '\n'){} //flush
+				}
+				return contador;
+				
+			case 'i':
+				int * i_ptr = va_arg(ap, int *);
+				
+				char * buffer = malloc (sizeof(char) * 12); //–2147483648 a 2147483647 mas nulo final;
+				buffer = memset (buffer, 0, 12);
+			
+				int digito = 0;
+				
+				caracter = getchar();
+				while (caracter != '\n' && digito<12){
+					buffer[digito]= caracter;
+					digito++;
+					caracter = getchar();
+				}
+				if (digito==12){
+					while ( (caracter = getchar()) != '\n'){}
+				}
+				
+				*i_ptr = strtol(buffer, NULL, 10);
+				
+				free(buffer);
+				
+				if ((*i_ptr)) return digito; 
+				else return 0;
+				
+			default:
+				return 0;
+			}
 }
