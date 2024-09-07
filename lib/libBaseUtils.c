@@ -6,18 +6,67 @@
 
 #include "../includes/baseUtils.h"
 char * ESTADOS[] = {"OPERATIVO", "REPUESTO", "EN REPARACION"};
+int MAX_ELEMENTOS;
 
+/** \brief Si no existe database, seteo el max segun config.ini . */  
+
+int defineMax (char * configFile){
+    int max = DEFAULT_MAX;
+    FILE * configPtr;
+
+    if ((configPtr = fopen(configFile, "r")) == NULL){
+        printf("error lectura config.ini");
+
+        fclose(configPtr);
+        return max;
+    }                     
+
+    char * buf = (char *) malloc (sizeof(char)*50);
+    buf = (char *) memset( buf, 0, 50);
+    fread(buf, sizeof(char), 50, configPtr);
+    char * strPtr = strtok(buf, "=");
+    
+    if (strcmp(strPtr,"MAX_ELEMENTS") == 0){
+        strPtr = strtok(NULL, "=");
+        int max = atoi(strPtr);
+
+        if (max) {
+            free(buf);
+
+        fclose(configPtr);
+            return max;
+        }
+    }
+    free(buf);
+    fclose(configPtr);
+    return DEFAULT_MAX;
+}
 
 /** \brief Si el archivo no existe, lo crea con la totalidad de los registros para acceso directo. */  
 void inicializarArchivo(){  
     FILE *filePointer;
-    Elemento temp = {0, "", 0, ""};
+    
+    Elemento * temp = (Elemento *) malloc (sizeof(Elemento));
+    temp = (Elemento *) memset (temp, 0, sizeof(Elemento));
+    
     if ((filePointer = fopen(ARCHIVO, "r")) == NULL){
-            filePointer = fopen(ARCHIVO, "w");                          //Si no existe el archivo, lo creo
+            filePointer = fopen(ARCHIVO, "w");
+            MAX_ELEMENTOS = defineMax(CONFIG);
+                                      //Si no existe el archivo, lo creo
             for (int i= 0; i< MAX_ELEMENTOS; i++){
-                fwrite(&temp, sizeof(Elemento), 1, filePointer);        //Rellena el archivo para su posterior acceso directo
+                fwrite(temp, sizeof(Elemento), 1, filePointer);        //Rellena el archivo para su posterior acceso directo
             }
-    } 
+    } else {
+        int i = 0;
+        filePointer = fopen(ARCHIVO, "r");
+        fseek(filePointer, 0, SEEK_SET);
+        while (!feof(filePointer)){
+                fread(temp, sizeof(Elemento), 1, filePointer);        //Bucle hasta que llego al EOF
+                i++;
+        }
+        MAX_ELEMENTOS = i-1;
+    }
+    printf("CANTIDAD MAX ELEMENTOS: %d\n", MAX_ELEMENTOS);
     fclose (filePointer);
 }
 
@@ -52,7 +101,9 @@ int cargarVector(Elemento elem[]){
 int validaId(int id){
     
     FILE *filePointer;
-    Elemento aux = {0, "", 0, ""};
+    Elemento * temp = (Elemento *) malloc (sizeof(Elemento));
+    temp = (Elemento *) memset (temp, 0, sizeof(Elemento));
+    
 
     if(id<=0 || id>MAX_ELEMENTOS) return -1;
 
@@ -60,11 +111,10 @@ int validaId(int id){
         printf ("Error al leer archivo");
         return -1;
     }
-
     fseek (filePointer, (sizeof(Elemento)*(id-1)), SEEK_SET);
-    fread(&aux, sizeof(Elemento), 1, filePointer);
-
-    if (aux.id == 0) return 1;  //Chequea si el elemento leido tiene id=0(LIBRE) o id!=0(OCUPADO)
+    fread(temp, sizeof(Elemento), 1, filePointer);
+    
+    if (temp->id == 0) return 1;  //Chequea si el elemento leido tiene id=0(LIBRE) o id!=0(OCUPADO)
     return 0;
 }
 
