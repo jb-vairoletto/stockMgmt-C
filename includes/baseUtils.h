@@ -1,9 +1,11 @@
 #ifndef BASEUTILS_H
 #define BASEUTILS_H
 
-#define MAX_ELEMENTOS 10000
+//#define MAX_ELEMENTOS 10000
+#define DEFAULT_MAX 10000
 #define ARCHIVO "database.dat"
 #define LOG "logUpdates.txt"
+#define CONFIG "config.ini"
 
 /*Definicion de tipos de datos y prototipos de funciones*/
 
@@ -19,6 +21,7 @@ typedef struct {
 } Elemento;
 
 /* UTILS */
+int defineMax(char *);
 void inicializarArchivo ();
 int cargarVector (Elemento[]);
 int validaId (int);

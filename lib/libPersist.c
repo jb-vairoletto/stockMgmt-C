@@ -5,6 +5,7 @@
 #include "../includes/persist.h"
 
 extern char * ESTADOS[];
+extern int MAX_ELEMENTOS;
 
 /** \brief Guarda el Elemento elem en la base de datos. 
  * \param Elemento elem: Recibe el elemento a guardar.

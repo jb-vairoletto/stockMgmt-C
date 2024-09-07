@@ -7,7 +7,7 @@
 #include "../includes/persist.h"
 
 extern char * ESTADOS[];
-
+extern int MAX_ELEMENTOS;
 /* ------------------------------------------------------------ */
 /** \brief INTERFAZ DEL USUARIO. 
  * \image html menuPrincipal.png
@@ -66,7 +66,7 @@ void menuAgregar(){
     Elemento * elemPtr = (Elemento *) malloc (sizeof(Elemento));
     elemPtr = (Elemento *) memset (elemPtr, 0, sizeof(Elemento));
 
-    printf("\n-Introducir el ID del elemento a agregar: [0 - %d]-> ", MAX_ELEMENTOS);
+    printf("\n-Introducir el ID del elemento a agregar: [1 - %d]-> ", MAX_ELEMENTOS);
     miscanf('i', &id);
 
     if (validaId(id) != 1){ 
