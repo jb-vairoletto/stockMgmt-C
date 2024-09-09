@@ -16,21 +16,19 @@ int menuPrincipal(){
     
     char * OPCIONES[] = {"1- AÑADIR ELEMENTO", "2- BORRAR ELEMENTO", "3- ACTUALIZAR ESTADO", "4- BUSCAR ELEMENTO POR ID", 
                         "5- LISTAR PENDIENTES", "6- GENERAR BACKUP CSV", "7- GENERAR INFORME ELEMENTOS PENDIENTE REPARAR",
-                        "0- SALIR"};
+                        "8 -INGRESO POR LOTE", "0- SALIR"};
     
     int opcion = 0;
     int cantidadOpciones = sizeof(OPCIONES)/sizeof(OPCIONES[0]);
-
+    
     printf("\n\t\t\tGestor de Stock VAIRO2000\n\n\t\t\t**************************\n");
     
     for (int i = 0; i<cantidadOpciones; i++){
         printf("\n\t\t%s \n",OPCIONES[i]);      
     }
     printf("\n -> ");
-    do {
-        miscanf('i', &opcion);
-    } while ( opcion >= cantidadOpciones);
-
+    miscanf('i', &opcion);
+    
     return opcion;
 }
 

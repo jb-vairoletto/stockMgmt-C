@@ -8,7 +8,7 @@
 char * ESTADOS[] = {"OPERATIVO", "REPUESTO", "EN REPARACION"};
 int MAX_ELEMENTOS;
 
-/** \brief Si no existe database, seteo el max segun config.ini . */  
+/** \brief Si no existe database, seteo el max_elements segun config.ini . */  
 
 int defineMax (char * configFile){
     int max = DEFAULT_MAX;
@@ -30,7 +30,7 @@ int defineMax (char * configFile){
         strPtr = strtok(NULL, "=");
         int max = atoi(strPtr);
 
-        if (max) {
+        if (max>0) {
             free(buf);
 
         fclose(configPtr);
@@ -114,7 +114,11 @@ int validaId(int id){
     fseek (filePointer, (sizeof(Elemento)*(id-1)), SEEK_SET);
     fread(temp, sizeof(Elemento), 1, filePointer);
     
-    if (temp->id == 0) return 1;  //Chequea si el elemento leido tiene id=0(LIBRE) o id!=0(OCUPADO)
+    if (temp->id == 0){
+        free(temp);
+        return 1;  //Chequea si el elemento leido tiene id=0(LIBRE) o id!=0(OCUPADO)
+    } 
+    free(temp);
     return 0;
 }
 
@@ -191,11 +195,45 @@ int miscanf(char tipo, ...){
 				*i_ptr = strtol(buffer, NULL, 10);
 				
 				free(buffer);
-				
 				if ((*i_ptr)) return digito; 
 				else return 0;
 				
 			default:
 				return 0;
 			}
+}
+
+void parseElemento (Elemento * temp, char * cadena){
+    
+    char * strPtr = strtok(cadena, ",");
+    int id = atoi(strPtr);
+    if (id != 0){
+        cadena = strtok(NULL, ",");
+        char * nombre = (char *) malloc (sizeof(char)*30);
+        strcpy(nombre, cadena);
+
+        cadena = strtok(NULL, ",");
+        char * estado = (char *) malloc (sizeof(char));
+        strcpy(estado, cadena);
+
+        cadena = strtok(NULL, ",");
+        char * observaciones = (char *) malloc (sizeof(char)*50);
+        strcpy(observaciones, cadena);
+        
+        //Aca elimino enter final
+        observaciones[strlen(observaciones)-1] = '\0';
+
+        if (nombre[0] != '\0' && observaciones[0] != '\0'){
+            if (*estado >= '0' && *estado <= '3'){
+                strcpy(temp->nombre, nombre);
+                strcpy(temp->observaciones, observaciones);
+                temp->estado = *estado - '0';
+                temp->id = id;
+                printf("\nPROCESANDO:\t %-10d %-30s %-15s %s",temp->id, temp->nombre, ESTADOS[temp->estado], temp->observaciones);
+            }
+        }
+        free(nombre);
+        free(estado);
+        free(observaciones);
+    }
 }
