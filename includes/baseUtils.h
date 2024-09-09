@@ -6,6 +6,7 @@
 #define ARCHIVO "database.dat"
 #define LOG "logUpdates.txt"
 #define CONFIG "config.ini"
+#define LOTE "lote.txt"
 
 /*Definicion de tipos de datos y prototipos de funciones*/
 
@@ -27,5 +28,6 @@ int cargarVector (Elemento[]);
 int validaId (int);
 void timer(char, char *);
 int miscanf(char, ...);
+void parseElemento (Elemento * , char *);
 
 #endif

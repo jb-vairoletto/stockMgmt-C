@@ -133,3 +133,36 @@ void generarInformePendientes(){
 
     fclose(writer);
 }
+
+int ingresoPorLote(){
+    int cantidad = 0;
+    FILE * flPtr;
+    
+    Elemento * elem = (Elemento *) malloc (sizeof(Elemento));
+    memset (elem, 0, sizeof(Elemento));
+
+    char * buffer = (char *) malloc (sizeof(char)*100);
+    memset(buffer, 0, 100);
+
+    flPtr = fopen(LOTE, "r+");
+
+    if (flPtr == NULL){
+        printf ("Error al leer archivo de lotes");
+    } else {
+         while (fgets(buffer, 100, flPtr) != NULL){
+            parseElemento(elem, buffer);
+            if (validaId(elem->id) == 1) {
+                printf("validando");
+                guardarElemento(elem);
+                cantidad++;
+            }
+            elem = (Elemento *) memset (elem, 0, sizeof(Elemento));
+            buffer = (char *) memset (buffer, 0, 100);
+            free(buffer);
+        }
+    }
+    free(elem);
+    fclose(flPtr);
+  
+    return cantidad;
+}

@@ -6,3 +6,4 @@ void borrarElemento(int);
 void generarInformePendientes();
 void generaCopiaCSV();
 void logUpdate(Elemento *, Estado);
+int ingresoPorLote();

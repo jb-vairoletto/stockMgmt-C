@@ -6,12 +6,13 @@
 
 int main(int argc, char const *argv[])
 {   
-    inicializarArchivo();
-    
+    int cant = 0;
 
+    inicializarArchivo();
     char flag = 'v';
     do {
         int opcion = menuPrincipal();
+        
         switch (opcion)
         {
         case 0:
@@ -37,6 +38,10 @@ int main(int argc, char const *argv[])
             break;
         case 7:
             generarInformePendientes();
+            break;
+        case 8:
+            cant = ingresoPorLote();
+            printf("\nSe ingresaron con exito %d registtos a la base de datos.\n", cant);
             break;
         default:
             printf("\nOpcion Incorrecta \n");
