@@ -5,3 +5,4 @@ void menuAgregar();
 void menuLeer();
 void menuPendientes();
 void actualizarEstado ();
+void menuOrdenar();
