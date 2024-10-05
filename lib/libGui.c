@@ -16,7 +16,7 @@ int menuPrincipal(){
     
     char * OPCIONES[] = {"1- AÑADIR ELEMENTO", "2- BORRAR ELEMENTO", "3- ACTUALIZAR ESTADO", "4- BUSCAR ELEMENTO POR ID", 
                         "5- LISTAR PENDIENTES", "6- GENERAR BACKUP CSV", "7- GENERAR INFORME ELEMENTOS PENDIENTE REPARAR",
-                        "8 -INGRESO POR LOTE", "0- SALIR"};
+                        "8 -INGRESO POR LOTE", "9- ORDENAR", "0- SALIR"};
     
     int opcion = 0;
     int cantidadOpciones = sizeof(OPCIONES)/sizeof(OPCIONES[0]);
@@ -197,4 +197,36 @@ void actualizarEstado(){
     }
 
     free(elemPtr);
+}
+
+void menuOrdenar(){
+    int opcion;
+    do{
+        printf("\nPresione 1 para ordenar por nombre\nPresione 2 para ordenar por estado\nPresione 3 para ordenar por ID\n ->");
+        miscanf('i', &opcion);
+    } while (opcion < 1 || opcion > 3);
+
+    Elemento * vector = (Elemento *) calloc (sizeof(Elemento), MAX_ELEMENTOS);
+    int cantidad = cargarVector(vector);
+
+    switch(opcion){
+        case 1:{
+            qsort(vector, cantidad, sizeof(Elemento), cmpNombre);
+            break;
+        }
+        case 2:{
+            qsort(vector, cantidad, sizeof(Elemento), cmpEstado);
+            break;
+        }
+        case 3:{
+            break;
+        }
+    }
+
+    for (int i = 0; i< cantidad; i++){
+        if (vector[i].id != 0 ) printf("\nID: %5d Nombre: %20s\tEstado: %10s\tObservaciones: %30s\n", vector[i].id, vector[i].nombre, 
+                                                                                                    ESTADOS[vector[i].estado], vector[i].observaciones);
+    }
+    free (vector);
+
 }

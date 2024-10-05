@@ -43,6 +43,9 @@ int main(int argc, char const *argv[])
             cant = ingresoPorLote();
             printf("\nSe ingresaron con exito %d registtos a la base de datos.\n", cant);
             break;
+        case 9:
+            menuOrdenar();
+            break;
         default:
             printf("\nOpcion Incorrecta \n");
         }

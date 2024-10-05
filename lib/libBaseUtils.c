@@ -14,10 +14,10 @@ int defineMax (char * configFile){
     int max = DEFAULT_MAX;
     FILE * configPtr;
 
-    if ((configPtr = fopen(configFile, "r")) == NULL){
+    if ((configPtr = fopen(configFile, "r+")) == NULL){
         printf("error lectura config.ini");
 
-        fclose(configPtr);
+        //fclose(configPtr);
         return max;
     }                     
 
@@ -29,7 +29,7 @@ int defineMax (char * configFile){
     if (strcmp(strPtr,"MAX_ELEMENTS") == 0){
         strPtr = strtok(NULL, "=");
         int max = atoi(strPtr);
-
+        
         if (max>0) {
             free(buf);
 
@@ -236,4 +236,29 @@ void parseElemento (Elemento * temp, char * cadena){
         free(estado);
         free(observaciones);
     }
+}
+
+int cmpNombre(const void *a, const void *b){
+    Elemento * elem1 = (Elemento *) a;
+    Elemento * elem2 = (Elemento *) b;
+    
+    char * _elem1 = elem1->nombre;
+    char * _elem2 = elem2->nombre;
+    
+    int cantidad = 0;
+    int len1 = strlen(_elem1);
+    int len2 = strlen(_elem2);
+
+    cantidad = len1 > len2 ? len2 : len1;
+    
+    for (int i = 0; i < cantidad; i++){
+        if (_elem1[i] > _elem2[i]) return 1;
+        if (_elem2[i] > _elem1[i]) return -1;
+    }
+    return len1-len2; //0 si las cadenas son igual de largas, sino resultado
+}
+int cmpEstado(const void *a, const void *b){
+    Elemento * elem1 = (Elemento *) a;
+    Elemento * elem2 = (Elemento *) b;
+    return elem1->estado-elem2->estado;
 }

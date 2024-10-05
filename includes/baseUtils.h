@@ -29,5 +29,7 @@ int validaId (int);
 void timer(char, char *);
 int miscanf(char, ...);
 void parseElemento (Elemento * , char *);
+int cmpNombre(const void *, const void *);
+int cmpEstado(const void *, const void *);
 
 #endif
