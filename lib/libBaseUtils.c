@@ -34,7 +34,7 @@ int defineMax (char * configFile){
             free(buf);
 
         fclose(configPtr);
-            return max;
+        return max;
         }
     }
     free(buf);

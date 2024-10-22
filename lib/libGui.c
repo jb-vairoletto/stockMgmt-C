@@ -224,9 +224,10 @@ void menuOrdenar(){
     }
 
     for (int i = 0; i< cantidad; i++){
-        if (vector[i].id != 0 ) printf("\nID: %5d Nombre: %20s\tEstado: %10s\tObservaciones: %30s\n", vector[i].id, vector[i].nombre, 
+        if (vector[i].id) printf("\nID: %5d Nombre: %20s\tEstado: %10s\tObservaciones: [%30s]", vector[i].id, vector[i].nombre, 
                                                                                                     ESTADOS[vector[i].estado], vector[i].observaciones);
     }
+    printf("\n");
     free (vector);
 
 }
