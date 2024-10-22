@@ -169,6 +169,7 @@ int miscanf(char tipo, ...){
 					*(ptr+contador) = caracter;
 					contador++;
 				}
+                *(ptr+contador) = 0;
 				if (contador == limite) {
 					while( (caracter = getchar ()) != '\n'){} //flush
 				}
@@ -192,7 +193,7 @@ int miscanf(char tipo, ...){
 					while ( (caracter = getchar()) != '\n'){}
 				}
 				
-				*i_ptr = strtol(buffer, NULL, 10);
+				*i_ptr = atoi(buffer);
 				
 				free(buffer);
 				if ((*i_ptr)) return digito; 
@@ -207,17 +208,21 @@ void parseElemento (Elemento * temp, char * cadena){
     
     char * strPtr = strtok(cadena, ",");
     int id = atoi(strPtr);
+
     if (id != 0){
         cadena = strtok(NULL, ",");
-        char * nombre = (char *) malloc (sizeof(char)*30);
+        char * nombre = (char *) malloc (sizeof(char)*31);
+        memset(nombre, 0, sizeof(*nombre));
         strcpy(nombre, cadena);
 
         cadena = strtok(NULL, ",");
         char * estado = (char *) malloc (sizeof(char));
+        memset(estado, 0, sizeof(*estado));
         strcpy(estado, cadena);
 
         cadena = strtok(NULL, ",");
-        char * observaciones = (char *) malloc (sizeof(char)*50);
+        char * observaciones = (char *) malloc (sizeof(char)*51);
+        memset(observaciones, 0, sizeof(*observaciones));
         strcpy(observaciones, cadena);
         
         //Aca elimino enter final
@@ -257,8 +262,10 @@ int cmpNombre(const void *a, const void *b){
     }
     return len1-len2; //0 si las cadenas son igual de largas, sino resultado
 }
+
 int cmpEstado(const void *a, const void *b){
     Elemento * elem1 = (Elemento *) a;
     Elemento * elem2 = (Elemento *) b;
     return elem1->estado-elem2->estado;
 }
+

@@ -68,7 +68,7 @@ void menuAgregar(){
     miscanf('i', &id);
 
     if (validaId(id) != 1){ 
-        printf("\nError agregando el elemento ID: %d, ID existente o no valida\n", elemPtr->id);     
+        printf("\nError agregando el elemento ID: %d, ID existente o no valida\n", id);     
     } else {
         elemPtr->id = id;
         

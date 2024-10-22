@@ -152,9 +152,11 @@ int ingresoPorLote(){
          while (fgets(buffer, 100, flPtr) != NULL){
             parseElemento(elem, buffer);
             if (validaId(elem->id) == 1) {
-                printf("validando");
+                printf(" --> Agregando");
                 guardarElemento(elem);
                 cantidad++;
+            } else {
+                printf(" --> ID Existente o no válida");
             }
             elem = (Elemento *) memset (elem, 0, sizeof(Elemento));
             buffer = (char *) memset (buffer, 0, 100);
