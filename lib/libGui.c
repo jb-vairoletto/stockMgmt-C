@@ -5,6 +5,7 @@
 #include "../includes/baseUtils.h"
 #include "../includes/gui.h"
 #include "../includes/persist.h"
+#include "../includes/stack.h"
 
 extern char *ESTADOS[];
 extern int MAX_ELEMENTOS;
@@ -64,7 +65,7 @@ void menuLeer()
 /**
  * \image html menuAgregar.png
  */
-void menuAgregar()
+void menuAgregar(StackNodePtr *stackPtr)
 {
     int id = 0;
 
@@ -88,7 +89,6 @@ void menuAgregar()
             caracteres = miscanf('c', elemPtr->nombre, 30);
         } while (caracteres == 0);
 
-        printf("\n-Estado: (1-OPERATIVO, 2-REPUESTO, 3-EN REPARACION) ->");
         Estado estado_temporal = 0;
         do
         {
@@ -103,21 +103,29 @@ void menuAgregar()
 
         guardarElemento(elemPtr);
         printf("\nGuardado exitosamente elemento ID: [%d] \n\n", elemPtr->id);
+
+        StackNodePtr *nodoCreado = createNode('c', elemPtr);
+        push(nodoCreado, stackPtr);
     }
     free(elemPtr);
 }
 
-void menuBorrar()
+void menuBorrar(StackNodePtr *stackPointer)
 {
     int id = 0;
 
     printf("\nIntroducir el ID del elemento a eliminar:  \n ->");
     miscanf('i', &id);
+    Elemento *elemPtr = (Elemento *)malloc(sizeof(Elemento));
+    elemPtr = (Elemento *)memset(elemPtr, 0, sizeof(Elemento));
 
     if (validaId(id) == 0)
     {
+        leerElemento(id, elemPtr);
         borrarElemento(id);
         printf("\nElemento %d eliminado", id);
+        StackNodePtr *nodoCreado = createNode('d', elemPtr);
+        push(nodoCreado, stackPointer);
     }
     else
     {
@@ -148,7 +156,6 @@ void menuEditar()
             caracteres = miscanf('c', elemPtr->nombre, 30);
         } while (caracteres == 0);
 
-        printf("\nEstado: (1-OPERATIVO, 2-REPUESTO, 3-EN REPARACION) -> ");
         Estado estado_temporal = 0;
         do
         {
@@ -195,7 +202,7 @@ void menuPendientes()
 /**
  * \image html menuActualizoEstado.png
  */
-void actualizarEstado()
+void actualizarEstado(StackNodePtr *stackPtr)
 {
     int id = 0;
 
@@ -218,7 +225,12 @@ void actualizarEstado()
         do
         {
             miscanf('i', &nuevo_estado);
-        } while (nuevo_estado < 1 && nuevo_estado > 3);
+        } while (nuevo_estado < 1 || nuevo_estado > 3);
+
+        Elemento *temp = (Elemento *)malloc(sizeof(Elemento)); // BACKUP PARA LA PILA
+        temp = (Elemento *)memset(elemPtr, 0, sizeof(Elemento));
+        memcpy(temp, elemPtr, sizeof(Elemento));
+
         elemPtr->estado = nuevo_estado - 1;
 
         printf("\nObservaciones: -> ");
@@ -227,6 +239,9 @@ void actualizarEstado()
         if (guardarElemento(elemPtr) && (viejo_estado != elemPtr->estado))
         {
             logUpdate(elemPtr, viejo_estado);
+
+            StackNodePtr *nodoCreado = createNode('u', temp);
+            push(nodoCreado, stackPtr);
         }
     }
     else

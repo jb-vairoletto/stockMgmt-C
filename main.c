@@ -1,31 +1,35 @@
 #include "stdio.h"
-
+#include "stdlib.h"
 #include "includes/baseUtils.h"
 #include "includes/gui.h"
 #include "includes/persist.h"
-
+#include "includes/stack.h"
 int main(int argc, char const *argv[])
-{   
+{
     int cant = 0;
-
+    StackNodePtr *stackPointer = (StackNodePtr *)malloc(sizeof(StackNodePtr));
     inicializarArchivo();
     char flag = 'v';
-    do {
+    do
+    {
         int opcion = menuPrincipal();
-        
+
         switch (opcion)
         {
         case 0:
             flag = 'f';
             break;
-        case 1: 
-            menuAgregar();
+        case 1:
+            menuAgregar(stackPointer);
+            printf("STACKPOINTER: [%s]", (*stackPointer)->nombre);
             break;
         case 2:
-            menuBorrar();
+            menuBorrar(stackPointer);
+            printf("STACKPOINTER: [%s]", (*stackPointer)->nombre);
             break;
         case 3:
-            actualizarEstado();
+            actualizarEstado(stackPointer);
+            printf("STACKPOINTER: [%s]", (*stackPointer)->nombre);
             break;
         case 4:
             menuLeer();
@@ -50,8 +54,6 @@ int main(int argc, char const *argv[])
             printf("\nOpcion Incorrecta \n");
         }
     } while ((flag == 'v'));
-    
-    return 0;
-    
-}
 
+    return 0;
+}
