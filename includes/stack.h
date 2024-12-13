@@ -19,4 +19,8 @@ void push(StackNodePtr *, StackNodePtr *);
 void pop(StackNodePtr *, StackNodePtr *);
 int isEmpty(StackNodePtr);
 StackNodePtr *createNode(char, Elemento *);
+void printStack(StackNodePtr);
+void undoCreate(StackNodePtr *);
+void undoUpdate(StackNodePtr *);
+void undoDelete(StackNodePtr *);
 #endif

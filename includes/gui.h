@@ -9,3 +9,4 @@ void actualizarEstado(StackNodePtr *);
 void menuLeer();
 void menuPendientes();
 void menuOrdenar();
+void menuDeshacer(StackNodePtr *);

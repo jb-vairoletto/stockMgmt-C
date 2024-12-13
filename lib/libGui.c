@@ -18,7 +18,7 @@ int menuPrincipal()
 
     char *OPCIONES[] = {"1- AÑADIR ELEMENTO", "2- BORRAR ELEMENTO", "3- ACTUALIZAR ESTADO", "4- BUSCAR ELEMENTO POR ID",
                         "5- LISTAR PENDIENTES", "6- GENERAR BACKUP CSV", "7- GENERAR INFORME ELEMENTOS PENDIENTE REPARAR",
-                        "8 -INGRESO POR LOTE", "9- ORDENAR", "0- SALIR"};
+                        "8 -INGRESO POR LOTE", "9- ORDENAR", "10- DESHACER ACCIONES REALIZADAS", "0- SALIR"};
 
     int opcion = 0;
     int cantidadOpciones = sizeof(OPCIONES) / sizeof(OPCIONES[0]);
@@ -219,6 +219,13 @@ void actualizarEstado(StackNodePtr *stackPtr)
         printf("ID: %d\tElemento: %s\tEstado: %s\tObservaciones:%s", elemPtr->id, elemPtr->nombre, ESTADOS[elemPtr->estado], elemPtr->observaciones);
 
         printf("\nIngrese el nuevo estado: (1-OPERATIVO, 2-REPUESTO, 3-EN REPARACION) -> ");
+        Elemento *temp = (Elemento *)malloc(sizeof(Elemento)); // BACKUP PARA LA PILA
+        temp = (Elemento *)memset(temp, 0, sizeof(Elemento));
+
+        temp->id = elemPtr->id;
+        temp->estado = elemPtr->estado;
+        strcpy(temp->nombre, elemPtr->nombre);
+        strcpy(temp->observaciones, elemPtr->observaciones); // BACKUP PARA LA PILA
 
         Estado nuevo_estado = 0;
         Estado viejo_estado = elemPtr->estado;
@@ -226,10 +233,6 @@ void actualizarEstado(StackNodePtr *stackPtr)
         {
             miscanf('i', &nuevo_estado);
         } while (nuevo_estado < 1 || nuevo_estado > 3);
-
-        Elemento *temp = (Elemento *)malloc(sizeof(Elemento)); // BACKUP PARA LA PILA
-        temp = (Elemento *)memset(elemPtr, 0, sizeof(Elemento));
-        memcpy(temp, elemPtr, sizeof(Elemento));
 
         elemPtr->estado = nuevo_estado - 1;
 
@@ -243,6 +246,7 @@ void actualizarEstado(StackNodePtr *stackPtr)
             StackNodePtr *nodoCreado = createNode('u', temp);
             push(nodoCreado, stackPtr);
         }
+        free(temp);
     }
     else
     {
@@ -293,4 +297,33 @@ void menuOrdenar()
     }
     printf("\n");
     free(vector);
+}
+
+void menuDeshacer(StackNodePtr *stackPointer)
+{
+    if (isEmpty(*stackPointer))
+    {
+        printf("\nNo se han encontrado acciones realizadas.\n");
+        return;
+    }
+    printStack(*stackPointer);
+    printf("\nDesea eliminar la ultima accion realizada? Y/N \n");
+    char opcion;
+    miscanf('c', &opcion);
+    if (opcion != 'y' && opcion != 'Y')
+        return;
+    char operacion = (*stackPointer)->op;
+    switch (operacion)
+    {
+    case 'c':
+        undoCreate(stackPointer);
+        break;
+    case 'u':
+        undoUpdate(stackPointer);
+        break;
+    case 'd':
+        undoDelete(stackPointer);
+        break;
+    }
+    return;
 }

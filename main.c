@@ -21,15 +21,12 @@ int main(int argc, char const *argv[])
             break;
         case 1:
             menuAgregar(stackPointer);
-            printf("STACKPOINTER: [%s]", (*stackPointer)->nombre);
             break;
         case 2:
             menuBorrar(stackPointer);
-            printf("STACKPOINTER: [%s]", (*stackPointer)->nombre);
             break;
         case 3:
             actualizarEstado(stackPointer);
-            printf("STACKPOINTER: [%s]", (*stackPointer)->nombre);
             break;
         case 4:
             menuLeer();
@@ -49,6 +46,9 @@ int main(int argc, char const *argv[])
             break;
         case 9:
             menuOrdenar();
+            break;
+        case 10:
+            menuDeshacer(stackPointer);
             break;
         default:
             printf("\nOpcion Incorrecta \n");
